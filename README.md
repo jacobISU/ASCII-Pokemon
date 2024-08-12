@@ -14,7 +14,7 @@ Download MinGW (a native Windows port of the GNU Compiler Collection (GCC)) from
 - `libgcc_s_dw2-1.dll`: Provides exception handling and other runtime functionalities.
 - `libncursesw-6.dll`: Used for creating text-based user interfaces in terminal applications.
 
-here is a reference to the MinGW installer in which to select the required libraries.
+Here is a reference to the MinGW installer in which to select the required libraries.
 ![image](https://github.com/user-attachments/assets/0ee92eb6-b768-4833-aa4e-5d65e74c9b58)
 
 ### Step 2: Build and Run
