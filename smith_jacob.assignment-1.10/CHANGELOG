@@ -1,0 +1,1023 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+Types of Changes:
+    ### Added - Something new is added to the file.
+    ### Fixed - A bug or error that has been resolved.
+    ### Changed - If code is changed or updated.
+    ### Removed - If any of the code is removed.
+    ### Note - If I have a comment.
+
+## [1.01] - 2023-01-30
+    
+    ### Added
+
+        -mapGenerator.c, CHANGELOG, and Makefile created.
+
+    ### Added
+
+        - generateMap() method added.
+        - 2D array of 80 x 21 created.
+
+    ### Added
+
+        -waterPlacement for x and y of grid that's randomly generated.
+        - generateTerrain() for an object of terrain to be randomly added and scaled on the map.
+
+    ### Changed
+
+        - generateMap() now makes a call to generateTerrain() instead of using for loops to add water and tall grass.
+
+    ### Added
+
+        - roadConstruction method that places the north, south, east, and west roads on the map.
+
+    ### Added
+
+        -generateRoad() and lookAround() methods.
+    
+    ### Changed
+
+        - changed lookAround() to a recursive method. 
+        - renamed lookAround() to lookAroundNS() to indicate North and South
+
+    ### Removed
+
+        -generateRoad because of pointless code. Fed values straight into lookAround.
+
+    ### Added
+
+        - created lookAroundWE() for the West and East Roads.
+
+    ### Fixed
+
+        - Fixed clipping against map border which was producing mulitple ways to exit the map.
+
+    ### Added
+
+        - buildBuilding() method. Takes in char input and places next to road. 
+
+    ### Changed
+
+        -Changed buildBuilding() parameters. No parameters get passed anymore. The call to the function builds the mart and center.
+    
+## [1.01] - 2023-01-31
+
+    ### Changed
+
+        -North and South roads now begin 4 spaces from the border.
+        -East and West roads now begin 7 spaces from the border.
+
+    ### Removed
+
+        -Road around each building for cleaner look.
+
+    ### Fixed
+
+        -buildBuilding() pokeCenter and pokeMarts were being built over roads which could cut off the player.
+
+    ### Note
+
+        -tried out different road types and how they interact with the environment. Nothing major changed.  
+
+    ### Added
+
+        -README file and info.
+
+    ### Removed
+
+        -All commented out code without information.
+        -Debugging Print Statements.
+
+## [1.02] - 2023-02-05
+
+    ### Added
+    
+        -commands.c
+        -scanner into main for user input.
+        -display text for each direction taken.
+
+    ### Removed
+
+        -command.c
+
+    ### Added
+
+        -2D array of map pointers named worldMap.
+        -Filled 2D array with NULL pointers.
+        -Declare moveX and moveY variables for starting location.
+        -PrintCell() location
+    
+    ### Changed
+
+        -instead of declaration of map_t d, declare the worldMap pointer at (200, 200) cell. 
+
+    ### Note
+
+        -a LOT of experimenting. Probably too long. But got the map to display at pointer. 
+
+## [1.02] - 2023-02-06
+
+    ### Added
+
+        -reimplimentation of scanning for input with scanf();
+        -print statements for every successful direction taken from Input
+
+    ### Changed
+
+        -Using fgets() instead of scanf() for string input.
+
+    ### Fixed
+
+        -Fly x y now can seperate the integers from the input String.
+
+    ### Added
+
+        -Quit Input to break loop.
+        -Error statement if invalid input is entered.
+        -variables xMan and yMan for distance equation for PokeMart and PokeCenter.
+
+    ### Changed
+
+        -newMap() now accepts 2 more arguments to pass the distance from the x and y coordinates from the center. 
+        -xMan and yMan assist in map_terrain to know if a border needs to block a road way. 
+
+    ### Added
+
+        -Probability Equation for PokeCenter and PokeMart to spawn added.
+        -Print statements for error check
+
+    ### Changed
+
+        -North input now checks for surrounding maps.
+        -South input now checks for surrounding maps.
+        -East input now checks for surrounding maps.
+        -West input now checks for surrounding maps.
+        -Fly inputs now checks for surrouning maps.
+
+    ### Removed
+
+        -Unneccessary Commented Out Code for clean up.
+
+    ### Changed
+
+        -North Input now exempts maps that would be outside the border.
+
+    ### Fixed
+
+        -North East and North West Corners was core dumping.
+        -Altered Corner search.
+        -South East and South West Corner was core dumping.
+        -Flying to corners and borders would cause core dump
+
+    ### Changed
+
+        -All North, South, East, West map checks for neighbors now take into account whether it is on the border or not.
+
+## [1.02] - 2023-02-07
+
+    ### Removed
+
+        - Removing print statements
+        - Removing Commented out code
+    
+    ### Added 
+
+        - README file created
+
+    ### Removed
+
+        -More print statements and unused commented code.
+
+## [1.02] - 2023-02-09
+
+    ### Added
+        
+        -Player typedef and struct created
+        -addCharacter() function
+        -typedef enum for character
+        -Random x and y variable to place Player
+        - Replaces current terrain cell with Player
+
+    ### Removed
+        
+        -typedef enum for character
+
+    ### Added
+
+        - enum terrain_type of player
+        - '@' at printmap() function added for new terrain_type case    
+
+    ### Fixed
+
+        - Player symbol '@' only printing at specific spots. break in for loop was in wrong place.
+    
+    ### Changed
+
+        -addCharacter() now adds player location to variable positionData in Player.
+
+## [1.03] - 2023 -02-12
+
+    ### Added
+
+        - enum of character type to represent enemies
+        - printEnemyMap method that takes a map, enemies type, and player's x and y position on the map.
+        - creation of grids for each enemy type and reuse of print maps code.
+        - full print of enemy values for different terrains
+    
+    ### Changed
+
+        - in event of hiker enemy, values of terrain change
+        - now makes border completely unavailable to hiker except by roads.
+
+## [1.03] - 2023-02-14
+
+    ### Fixed
+
+        -Hiker can no longer access any of the border's cells.
+
+    ### Added
+
+        - Call to a Dijkstra's algorithm
+
+    ### Changed
+
+        - Arguments passed to crappyDijkstra Method takes in enemy type/value.
+
+    ### Added
+
+        -implementation of Dijkstr'as algorithm
+
+    ### Fixed
+
+        - player position did not hold value correctly when passed to crappyDijkstra function.
+    
+## [1.03] - 2023-02-17
+
+    ### Removed
+
+        - Full body of the crappyDijkstras Method because not producing correct result.
+
+    ### Added 
+
+        - cell_t struct to hold values for dijkstras algorithm. Cost and previos for each cell. 
+        - New 2DGrid of type cell_t
+        - Every cell is set to its cost or set to NULL for infinity.
+        - Experimenting with Queues. 
+
+### [1.03] - 2023-02-19
+    ### Removed
+
+        -all instances of Dijkstra
+        -all experimentation of Queue
+
+    ### Changed
+
+        -border terrain now blocks all enemies from the edge of the map
+
+    ### Added
+
+        - burte force experimentation
+        
+    ### Removed  
+        - Removed brute force
+
+    ### Added
+
+        -Dijkstra's code from Dijkstra Path method.
+
+    ### Changed
+
+        -Several revisions of the code and broke everything yay!
+
+    
+## [1.03] - 2023-02-20
+
+    ### Changed
+
+        - more revisions of Dijkstra
+        - changed distance equation
+
+    ### Added
+
+        - the 4 other directions to go
+        - print statement of directions
+
+    ### Changed
+
+        -edited old solution to fit my code. Changed variables to fit new vertex_t struct.
+
+    ### Removed
+
+        -no op code and useless comments to self.
+
+## [1.03] - 2023-02-21
+
+    ### Changed
+
+        - Dijkstras algorithm body for all adjacent neighbors determining distance.
+
+    ### Added
+
+        - define of 1000000 instead of INT_MAX.
+        - compare function for vertex_t structs.
+
+    ### Fixed
+
+        - wherever player spawned, dijkstras would print out a ring of 0's.
+        - player terrain cost was set to 0 instead of cost of path (10).
+        - hiker value for tree was set to 15 instead of INFINITE
+
+    ### Removed
+
+        - commented out code and unaccurate comment statements
+
+    ### Changed
+
+        - revised README file.
+
+## [1.04] - 2023-02-22
+
+    ### Added 
+    
+        -a switch that takes an input of number of enemies to spawn on the map
+        - created enemy struct which includes movement cost, symbol, name, and heap node pointer.
+
+    ### Changed
+
+        - Player struct now includes cost variable and heap node pointer.
+
+    ### Added
+
+        -first instance of enemy being created based on input.
+
+    ### Removed
+
+        -name of enemy variable causing memory issues. 
+    
+## [1.04] - 2023-02-24
+
+    ### Added
+
+        - all enemy types to the enum character_type_t.
+        - generateEnemy() to initilize and return an enemy type.
+        - based on the number of enemies in the switch input, mirrors the amount of enemies intitialized in generateEnemy().
+
+    ### Changed
+
+        -Added a randomNumber() to remove all random number generations inside my switch/case statement.
+        -Instead of passing an enemy to addEnemy(), changed to an enemy array to transport several.
+
+    ### Fixed
+
+        - During Initialization, the symbol of each enemy was not being saved. 
+
+## [1.04] - 2023-02-26
+
+    ### Added
+
+        - addEnemy() function to gather all maps and resources to display.
+        - id cost for enemy variable
+
+    ### Changed
+
+        - Added rest of values for enemy types in printEnemy Map. 
+        - return statements for each enemy map created.       
+
+## [1.04] - 2023-02-27
+
+    ### NOTE
+
+        -Deleted everything due to structure not being suitable for 1.04 assignment. Starting new from 
+        1.03 instructor solution code. : (
+
+    ### Added
+
+        - If statement regarding input of numtrainers. 
+        - enemy struct with variables cost, type, symbol, pos, and node. 
+        - while loop to support all numbers for enemy generation and mallocing enemies.
+        - map of enemy pointers 21 x 80
+
+    ### Changed
+
+        - While loop to support enemy generation now can generate enemy types based on the number of iterations through the while loop.
+        - Supports all enemies now instead of just other. 
+    
+    ### Fixed
+
+        - Swimmers were spawning at every instance of water. Changed to only one swimmer per map.
+
+    ### Changed
+
+        -hikers and rivals now have a max spawn of 20% of the total enemie population.
+
+    ### Added
+
+        - eMap added to world map which is a 2d array of pointers to enemies.
+        - based on type, enemies are placed onto eMap based on the world current map terrain value. All enemies but swimmers spawn on clearings aka short grass.
+        - count for enemy generation based on numtrainers input. Example if numtrainers are 3. The first iteration will always produce a rival. second iteration will always produce a hiker. And it's random from there on. 
+        - heap creation and every creation of enemy is added to the heap.
+        - comparator for enemies cost values created. 
+
+## [1.04] - 2023-02-28
+
+    ### Fixed
+
+        - Player symbol '@' was pushing out an extra character in a row.
+
+    ### Added 
+    
+        - while loop to iterate through every node in the heap of enemies.
+        - removes each node and seperates it by the enemy symbol.
+        - at end of adding all enemies to heap, a enemy is created that is used as a place holder for the player. Cost is always 0 cause he ain't moving. 
+        - Default case for numtrainers. Now just running the program without a switch gives a default of 10 enemy trainers. 
+        - pacer movement added.
+
+    ### Fixed
+
+        - pacer would only move 1 cell but added updates to enemy position and now it moves properly. 
+
+    ### Added
+
+        - wanderer movement.
+        - explorer movement.
+        - swimmer movement.
+
+    ### Fixed
+
+        - wanderers, explorers, and swimmers would randomly change direction at any time. They were all using the same random generator so made each enemie type there own. 
+        
+    ### Added
+
+        -Special cases for swimmer. If it needs to cross under a bridge/path.
+    
+    ### Fixed
+
+        -wanderers in short and high grass would share the same edge of map references so turns were unpredictable. 
+        -pacers stuck between two objects would get stuck in an infinite loop. Added a wait cost. 
+        - wanders that are surrounded get stuck in infinite loop, added a wait cost.
+
+    ### Changed
+
+        - Wanderers more than two would feed off same random generator so added random int variable to the enemy struct. 
+
+    ### Added
+
+        - Heap now uses player to print. Map prints after every turn player has. 
+
+## [1.04] - 2023-03-01
+
+    ### Removed
+
+        -Entirety of rival movement.
+    ### Changed
+
+        - least() function changed to findNeighbor.
+        
+    ### Added
+
+        - New rival movement
+        - least variable in enemy struct to keep track of smallest cell around each rival created.
+
+    ### Fixed
+
+        - rival infinite looping
+        - findNeighbor function was returning wrong value.
+
+    ### Changed
+
+        -Several changes to how enemy is malloced. 
+        -All enemies that used a random variable to determine next direction now have their own random variable attached to the enemy struct itself. 
+
+    ### Removed
+
+        - All print statements for debugging
+        - unwanted comments. 
+
+    ### Changed
+
+        -cleaned code.
+
+    ### Added
+
+        - README file.
+        - gameSpeed variable at the top for easier function.
+
+    ### Fixed
+
+        -memory corruption that was being cause because i was mallocing an instance of an enemy instead of the enemy struct.
+
+    ### Added
+
+        -enemies now rotate between which terrain type they spawn on to keep the enemie distribution balanced. 
+
+## [1.05] - 2023-03-15
+
+    ### Removed
+
+        - all print statements
+
+    ### Added
+
+        - ncurses library
+        - link through MAKEfile.
+
+## [1.05] - 2023-03-17
+
+    ### Added
+
+        - init_terminal method to instantiate values associated with ncurses. 
+        - endwin() added to the end of the ncurses program.
+        - a render map() function added to where printMap() use to be.
+
+## [1.05] - 2023-03-19
+
+    ### Added
+
+        - Terrain characters are now colorized with the attron()/attroff() function.
+        - Single alert line is add to above the map for world interaction.
+
+    ### Removed
+
+        - printMap() because ncurses now does the work.
+
+    ### Added
+
+        - move_player() added which takes in 3 parameters of character_t, y, x and moves the player if possible.
+
+## [1.05] - 2023-03-20
+
+    ### Added
+
+        - maybeBattle() to check all surrounding cells of player, if the cell has a npc in it, a pokebattle is triggered.
+    
+    ### Changed
+
+        - character_t now has a defeated variable.
+        - NPC's only move now if there defeated statis is a 0. If 1, no movement.
+        - maybeBattle() now only triggers if current adjacent npc is undefeated.
+    
+    ### Fixed
+
+        - swimmers weren't pathing right. Also wandering movement was wrong as well. Both fixed now. 
+        - Pokemon Battle and Trainer defeated messages were over lapping making it hard to read.
+
+    ### Changed
+
+        - Player symbol color to RED.
+        - Path color to CYAN. 
+
+    ### Fixed
+
+        - Enemies were turning into the player symbol when adjacent.
+
+    ### Removed
+
+        - Commented out code that is useless.
+
+    ### Added
+
+        - Commands to enter and exit Pokemon Center and PokeMart.
+        - If not on appropriate tiles to enter Center or Mart, it will display an error message telling you you are not on correct cell or tile. 
+        - trainer list key press started.
+        - enemyList created for array of enemies to scroll through. 
+        - implementation of KEY UP and KEY DOWN keys for scrolling through trainer list.
+
+    ### Fixed
+
+        - Kept having segmentation fault becuase indexing was reaching outside of enemyList array bounds.
+        - Player moving behind enemies after they are defeated.
+
+## [1.05] - 2023-03-21
+
+    ### Changed
+
+        - All text now fits within the borders of the map. (Less than 80 characters).
+        - Locations of enemies on map are now displayed from PC's position. 
+        - Terrain Color values adjusted.
+
+    ### Added
+
+        - README created.
+
+    ### Changed
+
+        - All updates added to README.
+
+    ### Removed
+
+        - Unwanted or irrelevant comments.
+
+## [1.06] - 2023-03-25
+
+    ### Changed
+
+        - All code converted from C programming to C++.
+        - Structs to Classes
+        - Casts
+        - Specific integer values.
+
+## [1.06] - 2023-03-26
+
+    ### Fixed
+
+        - certain enemies did not have the defeated status therefore could not interact with the pc.
+
+    ### Changed
+
+        - move_player() now recognizes when the pc wants to step onto a gate tile.
+
+    ### Added
+
+        - when the pc does step to a gate tile, depending on the direction of the gate, the world index will change to that map.
+        - Upon changing maps, it saves the pc's current information to that map.
+        - Then the appropriate info such as pc position for the new map is reinstated or created.
+
+    ### Changed
+
+        - Gates that are close together creates confusion on where the pc ends up, so the pc must align striaght with the gate direction.
+
+## [1.06] - 2023-03-27
+
+    ### Changed
+
+        - when pc changes gates,now saves and loads the state of the pc's cost for that specific map. Or creates a new one if map was NULL.
+
+    ### Fixed
+
+        - for the first move in a new map, player was invisible. Didn't update PC for world.
+
+    ### Removed
+
+        - unwanted comments and old lines of code.
+        - several render_map() statements from experimenting with ncurses.
+    
+    ### Changed
+
+        - Consolidated a lot of code in move_player() and game_loop().
+
+## [1.06] - 2023-03-28
+
+    ### Added
+
+        - Fly is now added to the pc's abilities. Press 'f'.
+        - user input is accepted, and if good, changes the world index to that point.
+        - Saves all pc information and transfers appropriate info. 
+
+    ### Fixed
+
+        - y and x axis were inverted so f (0,5) would take you to (5,0).
+        - rivals would sometimes spawn in places they weren't suppose to.
+
+    ### Removed
+
+        - unwanted commented code.
+
+    ### Fixed
+
+        - character_placement() would get stuck in an infinite loop and freeze game.
+        - the 'other' characters would spawn where they weren't suppose to.
+
+    ### Changed
+
+        - all instances of WORLD_SIZE was changed to 401 int because I was trying to debug something. 
+
+    ### Added
+
+        - README created and filled.
+
+## [1.07] - 2023-03-31
+
+    ### Added
+
+        - the argv[1] is now input to decide which file to open in the database.
+        -if statement to check input to see which file it is attempting to open.
+        - file paths to each locations added. Prints Error if argv[1] is not in data base.
+        - openFile() created, takes all paths and argv parameter.
+
+    ### Fixed
+
+        - Would Segfault when no parameter was entered.
+
+    ### Changed
+
+        - Commented out code not necessary for assignment 1.07.
+
+    ### Added
+
+        - Class creations and all fields ready to accept values as per there csv counterpart.
+
+## [1.07] - 2023-04-01
+
+    ### Added
+
+        - implemented ifstream to attempt to open files passed through method arguments.
+        - getenv() used to extract $HOME value from user as the second file path to try.
+        - 2D Vector made to read in contents of file path.
+
+    ### Changed
+
+        - After contents are stored in vector, I close the file instead of at the end of the method.
+
+    ### Added
+
+        - If statements to know which class to create from 2Dvector holding all data.
+
+## [1.07] - 2023-04-02 
+
+    ### Added
+
+        - 2D vector is iterated through and stores each value to its apropriate field in the class it was registered to.
+        - Expansion: if pokemon p is created through pokemon.csv then p.id would be the first cell of vector[0][0] and so on.
+        - Vector for approriate class made for each class that could be made.
+        - Add all created class objects to the class vector. pokemon p would be inserted into vector<pokemon>.
+
+    ### Changed
+
+        - If value in csv file is empty, replace with INT_MAX
+
+    ### Added
+
+        - Print statements added to print appropriate fields.
+
+    ### Changed
+
+        - Added setw()'s to try and line up the data to be more presentable.
+        - Does not print INT_MAX anymore, just prints a blank space as the value.
+
+## [1.07] - 2023-04-03
+
+    ### Added
+
+        - All file types and class types associated with files implemented.
+        - Each csv file can be produced into classes. 
+        - Secondary file implemented if First one fails. 
+
+    ### Removed
+
+        - Unwanted code and comments
+        - print statements helped to debug.
+
+    ### Changed
+
+        -Third file is problematic but does not affect the first 2. Since it's optional, I am continueing to submit.
+
+    ### Added
+
+        -README.
+
+    ### Fixed
+
+        -The wrong argument spelling would cause a segfault. Now exits the program properly. 
+
+## [1.08] - 2023-04-08
+
+    ### Changed
+
+        - All database files changed to all be loaded into project and then printed out.
+        - Removal of database print statements.
+        - Removal of comment code from 1.07.
+        - Refactoring of poke327.h to accept all classes imported from the data base. 
+
+## [1.08] - 2023-04-09
+
+    ### Added
+
+        - makePokemon class to hold all values of what a pokemon is. 
+        - createPokemon function made to fill the class values. 
+        - printPokemon function made to print all values from established pokemon.
+
+    ### Changed
+
+        -makePokemon now returns a makePokemon object.
+        -level equation redone. 
+        -HP and stats equations redone.
+
+    ### Added
+
+        -Shiny variable added to makePokemon class and createPokemon().
+        -Created a pokemonArray in under character class to hold created pokemon. 
+
+## [1.08] - 2023-04-10
+
+    ### Added
+
+        - upon first runthrough of io_display, a character value "hasPokemon" is checked to see if the player has any Pokemon.
+        - selectPokemon() created.
+        - 3 makePokemon objects are created and added to an array for the player to choose from.
+        - print statement to reflect which pokemon was picked and the stats associated with it.
+        - print statements to reflect shiny, null moves, and other checks.
+        - add Pokemon to pc pokemon Array.
+
+    ### Fixed
+
+        - error when trying to save pokemon to character's pokemonArray.
+        - refactor of character.h file. Add makePokemon class.
+
+    ### Changed
+
+        -several print statements.
+
+    ### Added
+
+        -Windows to all encounters. 
+
+    ### Changed
+
+        -All text to windows instead.
+
+    ### Added 
+        
+        -encounter mechanic inside io_battle.
+
+## [1.08] - 2023-04-11
+
+    ### Added
+
+        - pokemon generation code inside hiker creation. 60% probabily for n+1 pokemon. Stops at 6 pokemon.
+
+    ### Fixed
+
+        - Number of pokemon being generated for npc's was insanely high due to using same variable. Changed the variable. 
+
+    ### Changed
+
+        - added the pokemon generation code to all npc's.
+
+    ### Added
+
+        - During encounter of pc and npc, windows are created.
+        - Print statements print all data of each person.
+        - vs, battle, instruction windows. 
+        - added input to control battle.
+        - encounter added to move_pc_dir() function based on if pc is in tall grass
+        - equation for probability of pokemon encounter in tall grass
+        - pokemon created for each encounter with stats printed out. 
+
+    ### Fixed
+
+        - Several class errors. Changed to Pointers.
+        - createPokemon() returns pointer to pokemon created. 
+
+    ### Changed
+
+        - Fine tuning print statements and colors.
+        - Aligning windows for more enjoyable appeal. 
+        - Certain stats setup.
+
+    ### Added
+
+        - README file.
+
+    ### Removed
+
+        - unwanted comments.
+        - testing print statements. 
+
+    ## Changed
+
+        -Last second Print Statements.
+
+## [1.08] - 2023-04-12
+
+    ## Changed
+
+        - Restructure of stat print statements.
+        - accuracy and evasion stats.
+        - window sizes to display more information.
+
+    ## Fixed
+
+        - Female pokemone would show as level 0 starting off which was cause by a misplaced print statement. 
+
+    ## Removed
+
+        - All unwanted comments and print statements.
+    
+## [1.09] - 2023-04-16
+
+    ### Added
+
+        -Bag inventory button 'B'.
+        -Random amount of Revives, Potions, Pokeballs.
+
+    ### Changed
+
+        - Pokemon now have variables to track being knocked out and amount of damage being done to them.
+
+    ### Changed
+
+        - Restructuring of wild pokemon encounter menu.
+
+    ### Added
+
+        - Fight, Bag, Run, Pokemon menu options.
+        - selection of selected pokemon moves to face enemy pokemon.
+        - Ability to use Bag and items inside bag while encounter menu.
+        - Catch A pokemon by using a pokeball.
+        - Place holders for potions and revives.
+        - Run ability has 50% chance to flee.
+        - Pokemon Selection method. Can choose Pokemon as long as they are not KO'd.
+
+    ### Removed
+
+        - Unused stats of PC pokemon. 
+
+    ### Fixed
+
+        - Item values would sometimes return garbage values. 
+
+## [1.09] - 2023-04-17
+
+    ### Added
+
+        - Battle will continue until player has no more pokemon left to fight, the enemy pokemon is KO'd, the enemy pokemon is caught, the player has 6 pokemon already and tries to catch, and if the trainer tries to run from the battle.
+        - Full design of wild pokemon battle interface created.
+        - All available options implemented and respective windows created.
+
+    ### Changed
+
+        - Potions and Revives can now be used on any pokemon in the players inventory.
+        - If player switches pokemon or fails to flee the fight, the enemy pokemon gets a turn. 
+        - If pokemon is knocked out, you cannot use any moves from them. 
+        - If no pokeballs, notification pops up. 
+        - Hp restoration, Revived from knock out, all reflect current pokemon selected.
+
+    ### Added
+
+        -Fight mechanics implemented with equations utilized.
+
+    ### Fixed
+
+        - Hp/HpBase, Potions/PotionBase, Revives/RevivesBase were reflecting wrong numbers. Now shows correct.
+
+    ### Added
+
+        -If pc loses his first pokemon, the fight ends. Come back to change this.  
+
+## [1.09] - 2023-04-18
+
+    ### Added
+
+        - total defeat check to see if all PC pokemon are knocked out. If so, battle ends.
+        - Implementation of Trainer battles. Similiar to Pokemon.
+        - NPC's now spawn a random amount of potions and revives.
+
+    ### Changed
+
+        - 'B' items can now be applied to any pokemon.
+        - totalDefeat also added to NPC.
+
+    ### Added
+
+        - if NPC's have items, they use them if the pokemon is hurt. 
+        -'P' button added to reflect pokemon statuses. 
+        - if NPC's pokemon is KO'd and they have no more pokemon, they are totally defeated and ends the battle. 
+        - if NPC's pokemon is KO'd and they have more pokemon, they switch to one. 
+
+    ### Changed
+
+        - cleaned up battleing interfaces
+        - moved ncurses print statement
+        - Changed damage equations to match pdf. 
+
+    ### Removed
+
+        -Unwanted comment lines.
+        -Unwanted commented out code. 
+
+    ### Added
+
+        - README.
+
+    ### Changed
+
+        -Lingering Pokemon Button Box now leaves upon 'escape'
+        -Repositioning of Fight Print Statements.
+        -Revives for wild pokemon no longer can be used on Non-KO'd pokemon.
+
+## [1.10] - 2023-04-30
+
+    ### Added
+
+        -several variables to indicate when a pokemon levels ups such as experience per battle and enough experience to level up.
+        - Upon the defeat of a trainer, calculates number of pokemon to determine how much exp you get.
+        - Method lvlUpStats which upon a level up, there new stats are created with the base numbers from when they were created.
+
+    ### Changed
+
+        - Added variables to makePokemon class to hold the base values from the pokemon stats csv for use in stat calculation when a pokemon levels up. 
+        - Added lvl and exp "bar" to battle interface to show the player the pokemon's current stats and level. 
+
+    ### Added
+
+        - After victory window, a experience window pops up showing you how much exp each pokemon got and if they leveled up from it. 
+
+    ### Fixed
+
+        -Was segfaulting on several attempts at trying to arrange the experience based on the selected pokemon as opposed to pokemon who didnt battles.
+
+    ### Changed
+
+        -When a player wins a battle, all pokemon in the player's inventory gets experience just significantly less than the main one that finishes the battle as the selectedPokemon. 
