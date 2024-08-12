@@ -1,72 +1,43 @@
 # ASSIGNMENT 1.10
-This program was created to implement Pokemon Battles with Trainers and Wild Pokemon.
-Also, Items are introduced which can be used from the PC's bag in/out of battle.
-Lastly, Both PokeMarts and PokeCenters are fully functional. 
+
+This program was created to implement Pokémon battles with Trainers and Wild Pokémon. It also introduces items that can be used from the PC's bag in and out of battle. Additionally, both Poké Marts and Poké Centers are fully functional.
 
 ## PLAYER INVENTORY AND ITEMS
-`B` - will open the player's bag revealing a random amount of Potions, Pokeballs, and Revives.(8-ish each)  
-      - 1 Potion will open a window showing all player's pokemon.  
-          Select the number to heal that Pokemon. Full-health wont use a potion.  
-      - 2 Only available during wild Pokemon battles. Otherwise, displays message.  
-      - 3 Revives will open a seperate window showing all player's pokemon.  
-          Select respective number to revive that Pokemon. Non-KO'd Pokemon wont use revive. 
-        
-        > NOTE:   Pressing the number of a Pokemon that doesnt exist will cause a SegFault here.
 
-`P` - I added a Pokemon button that shows all the player's pokemon's name, HP, and Knockout status.
-       
+- **`B`**: Opens the player's bag, revealing a random amount of Potions, Poké Balls, and Revives (approximately 8 each).
+  - **1**: Potion will open a window showing all of the player's Pokémon. Select the number to heal that Pokémon. Full-health Pokémon won’t use a Potion.
+  - **2**: Available only during Wild Pokémon battles. Otherwise, it displays a message.
+  - **3**: Revives will open a separate window showing all of the player's Pokémon. Select the number to revive that Pokémon. Non-KO'd Pokémon won’t use a Revive.
+
+  > **NOTE**: Pressing the number of a Pokémon that doesn’t exist will cause a segmentation fault.
+
+- **`P`**: Shows all the player's Pokémon names, HP, and Knockout status.
+
 ## BATTLING WILD POKEMON
-The chance to encounter a pokemon in tall grass is 15%.  
-The battle interface still shows a lot of the wild pokemon's stats.  
 
-Player Interface:  
-    - `1` - Fight
-          Opens a move list revealing 2 moves from the player's current pokemon.
-          Upon selecting one, it will activate that move.
-          A Fight box will appear revealing the turn order, damage, and if any pokemon were KO'd.
-          If the player's selected pokemon is KO'd, it will not attack. Must Switch if able.
+The chance to encounter a Pokémon in tall grass is 15%. The battle interface displays many of the Wild Pokémon’s stats.
 
-    - `2` - Bag
-          Same as pressing 'B' except using a pokeball will capture the Wild Pokemon.
-          If player already has 6 pokemon, the wild pokemon will flee upon using the pokeball. 
+**Player Interface:**
+- **`1` - Fight**: Opens a move list revealing 2 moves from the player's current Pokémon. Upon selecting one, it will activate that move. A Fight box will appear showing the turn order, damage, and any KO'd Pokémon. If the player's selected Pokémon is KO'd, it will not attack. Must switch if able.
+- **`2` - Bag**: Functions like pressing `B`, but using a Poké Ball will attempt to capture the Wild Pokémon. If the player already has 6 Pokémon, the Wild Pokémon will flee when a Poké Ball is used.
+- **`3` - Run**: 50% chance to escape the Wild Pokémon battle. Failing to escape forfeits your move, and the Wild Pokémon gets a free attack.
+- **`4` - Pokémon**: Opens a Pokémon list. Pressing the respective number will switch out your current Pokémon, forfeiting a turn and allowing the Wild Pokémon a free attack.
 
-    - `3` - Run
-          50% chance to escape the wild pokemon battle. 
-          Failing to escape forfeits your move and the wild pokemon gets a free attack.
-
-    - `4` - Pokemon
-          Opens a pokemon list. Pressing the respective number will switch out your current pokemon.
-          Doing so forfeits a turn, the wild pokemon will get to attack for free.
-
-Battle ends if the player successfully runs, the wild pokemon is caught, flees, or is knocked out.     
+**Battle Ends**: If the player successfully runs, the Wild Pokémon is caught, flees, or is knocked out.
 
 ## BATTLING ENEMY TRAINERS
-Similiar to the Wild pokemon battles except you can't run and you can't use pokeballs.
-All enemy trainers can spawn with 0-2 potions/revives.
-The enemy has the first turn and uses any items if needed along with selecting an move.
-Then you go and use any items if needed, also selecting a move. 
-Based on the priority/speed/random selection, a pokemon will go first. If the other is not KO'd, then the other will go. 
-The battle only ends when either all of the Player's pokemon or the Enemy Trainer's pokemon are all KO'd.
+
+Similar to Wild Pokémon battles, but you can't run or use Poké Balls. Enemy Trainers can have 0-2 Potions/Revives. The enemy goes first, using items if needed and selecting a move. The player then uses any items if needed and selects a move. Based on priority, speed, and random selection, Pokémon will take turns. The battle ends when all of the Player’s or the Enemy Trainer’s Pokémon are KO'd.
 
 ## OTHER STUFF
-- PokeMarts restock all of player's inventory items back to their base value.
-- PokeCenters heal all pokemon back to full health and remove Knocked Out status.
-- During a battle, pokemon will do 0 damage if they miss or a turn is forfeited. 
-- Pokemon can also crit.
-- If all of the Player's pokemon are KO'd, Enemy trainers will still follow but no battles will happen.
 
-> NOTE: The windows in the fight sequence aren't perfect so an additional key press is sometimes needed.
-      For 'any key' I use 5 on the numpad but any will work.  
+- Poké Marts restock all of the player's inventory items back to their base values.
+- Poké Centers heal all Pokémon to full health and remove KO status.
+- During a battle, Pokémon deal 0 damage if they miss or if a turn is forfeited. Critical hits are possible.
+- If all of the Player’s Pokémon are KO'd, Enemy Trainers will still follow, but no battles will occur.
 
-> NOTE: Best way to experience this is to catch as many pokemon in tall grass as you can before a rival 
-      or hiker gets to you. Otherwise you'll use a lot of potions just to survive the battle if they have a lot of pokemon. 
+> **NOTE**: The windows in the fight sequence aren’t perfect, so an additional key press may be needed. For 'any key', use `5` on the numpad, but any key will work.
+
+> **NOTE**: To get the best experience, catch as many Pokémon as possible in tall grass before encountering a rival or hiker. Otherwise, you may use many Potions to survive battles if they have numerous Pokémon.
 
 ## END
-
-
-
-
-
- 
-
-
