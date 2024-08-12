@@ -4,7 +4,7 @@ Also, Items are introduced which can be used from the PC's bag in/out of battle.
 Lastly, Both PokeMarts and PokeCenters are fully functional. 
 
 ## PLAYER INVENTORY AND ITEMS
-'B' - will open the player's bag revealing a random amount of Potions, Pokeballs, and Revives.(8-ish each)
+'B' - will open the player's bag revealing a random amount of Potions, Pokeballs, and Revives.(8-ish each) <br>
         '1' -   Potion will open a seperate window showing all player's pokemon.
                 Select respective number to heal that Pokemon. Full health wont use a potion.
         '2' -   Only available during wild Pokemon battles. Otherwise, displays message.
@@ -19,7 +19,7 @@ Lastly, Both PokeMarts and PokeCenters are fully functional.
 The chance to encounter a pokemon in tall grass is 15%.
 The battle interface still shows a lot of the wild pokemon's stats.
 
-Player Interface:
+Player Interface:<br>
     '1' - Fight
           Opens a move list revealing 2 moves from the player's current pokemon.
           Upon selecting one, it will activate that move.
