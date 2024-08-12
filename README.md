@@ -5,9 +5,9 @@ This program was created to implement Pokémon battles with Trainers and Wild Po
 ## PLAYER INVENTORY AND ITEMS
 
 - **`B`**: Opens the player's bag, revealing a random amount of Potions, Poké Balls, and Revives (approximately 8 each).
-  - **1**: Potion will open a window showing all of the player's Pokémon. Select the number to heal that Pokémon. Full-health Pokémon won’t use a Potion.
-  - **2**: Available only during Wild Pokémon battles. Otherwise, it displays a message.
-  - **3**: Revives will open a separate window showing all of the player's Pokémon. Select the number to revive that Pokémon. Non-KO'd Pokémon won’t use a Revive.
+  - **`1`**: Potion will open a window showing all of the player's Pokémon. Select the number to heal that Pokémon. Full-health Pokémon won’t use a Potion.
+  - **`2`**: Available only during Wild Pokémon battles. Otherwise, it displays a message.
+  - **`3`**: Revives will open a separate window showing all of the player's Pokémon. Select the number to revive that Pokémon. Non-KO'd Pokémon won’t use a Revive.
 
   > **NOTE**: Pressing the number of a Pokémon that doesn’t exist will cause a segmentation fault.
 
