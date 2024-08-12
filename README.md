@@ -26,7 +26,25 @@ Download MinGW (a native Windows port of the GNU Compiler Collection (GCC)) from
 
    > Note: If terminal is too small, game will be cut off. Resize terminal window and restart. 
 
-### Step 3: S
+### Step 3: See README in "Play ASCII Pokemon" folder for controls. 
+
+## Running Game without Source Code
+The MinGW libraries are essential in running this program.
+
+### Step 1: Download "Ascii-pokemon.zip" file in the "Play ASCII Pokemon" folder or just download the whole folder. 
+Both contain the pokemon database, poke327.exe file, and README.
+
+### Step 2: Install MinGW
+Download MinGW (a native Windows port of the GNU Compiler Collection (GCC)) from [here](https://sourceforge.net/projects/mingw/). You need this because you will need to install the following libraries from it to run the program on Windows:
+- `libstdc++-6.dll`: Provides the standard C++ library implementations, such as containers, algorithms, and utilities.
+- `libgcc_s_dw2-1.dll`: Provides exception handling and other runtime functionalities.
+- `libncursesw-6.dll`: Used for creating text-based user interfaces in terminal applications.
+
+### Step 3: Start poke327.exe file.
+If the libraries haven't been installed then a window will pop up telling you to install them first.
+Otherwise, a terminal will pop-up with "Loading Game..." and the game will start.
+
+
   
 
 
