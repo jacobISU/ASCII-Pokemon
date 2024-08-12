@@ -44,6 +44,13 @@ Download MinGW (a native Windows port of the GNU Compiler Collection (GCC)) from
 If the libraries haven't been installed then a window will pop up telling you to install them first.
 Otherwise, a terminal will pop-up with "Loading Game..." and the game will start.
 
+Terminal.
+![image](https://github.com/user-attachments/assets/7716106c-74a3-4796-be6c-7b91f0c2f937)
+
+Opening Screen.
+![image](https://github.com/user-attachments/assets/06da49f8-1719-4dbb-a54c-6c03ebfda540)
+
+
 
   
 
