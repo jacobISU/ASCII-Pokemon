@@ -5,11 +5,11 @@ Lastly, Both PokeMarts and PokeCenters are fully functional.
 
 ## PLAYER INVENTORY AND ITEMS
 `B` - will open the player's bag revealing a random amount of Potions, Pokeballs, and Revives.(8-ish each)  
-        `1` Potion will open a window showing all player's pokemon.  
+                `1` Potion will open a window showing all player's pokemon.  
                 Select the number to heal that Pokemon. Full-health wont use a potion.  
-        `2` Only available during wild Pokemon battles. Otherwise, displays message.  
-        `3` Revives will open a seperate window showing all player's pokemon.  
-            Select respective number to revive that Pokemon. Non-KO'd Pokemon wont use revive. 
+                `2` Only available during wild Pokemon battles. Otherwise, displays message.  
+                `3` Revives will open a seperate window showing all player's pokemon.  
+                    Select respective number to revive that Pokemon. Non-KO'd Pokemon wont use revive. 
         
         > NOTE:   Pressing the number of a Pokemon that doesnt exist will cause a SegFault here.
 
