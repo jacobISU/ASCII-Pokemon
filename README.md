@@ -5,7 +5,7 @@ This was a fun project for my Advanced Programming Techniques class (CS 327) in 
 
 **Disclosure**: All code in the final project is not my own, as it was a semester project with checkpoint milestones. However, all features and data structures were implemented by me throughout the project.
 
-## Running the Source Code
+## Running Game WITH Visual Studio Code.
 I used Visual Studio Code and MinGW to run this project on Windows. It was originally run on Unix, but I changed it to run on Windows for convenience.
 
 ### Step 1: Install MinGW
@@ -28,7 +28,7 @@ Download MinGW (a native Windows port of the GNU Compiler Collection (GCC)) from
 
 ### Step 3: See README in "Play ASCII Pokemon" folder for controls. 
 
-## Running Game without Source Code
+## Running Game WITHOUT Visual Studio Code.
 The MinGW libraries are essential in running this program.
 
 ### Step 1: Download "Ascii-pokemon.zip" file in the "Play ASCII Pokemon" folder or just download the whole folder. 
