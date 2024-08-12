@@ -5,36 +5,36 @@ Lastly, Both PokeMarts and PokeCenters are fully functional.
 
 ## PLAYER INVENTORY AND ITEMS
 `B` - will open the player's bag revealing a random amount of Potions, Pokeballs, and Revives.(8-ish each)  
-        '1' -   Potion will open a seperate window showing all player's pokemon.
+        `1` -   Potion will open a seperate window showing all player's pokemon.
                 Select respective number to heal that Pokemon. Full health wont use a potion.
-        '2' -   Only available during wild Pokemon battles. Otherwise, displays message.
-        '3' -   Revives will open a seperate window showing all player's pokemon.
+        `2` -   Only available during wild Pokemon battles. Otherwise, displays message.
+        `3` -   Revives will open a seperate window showing all player's pokemon.
                 Select respective number to revive that Pokemon. Non-KO'd Pokemon wont use revive. 
         
         > NOTE:   Pressing the number of a Pokemon that doesnt exist will cause a SegFault here.
 
-'P' -  I added a Pokemon button that shows all the player's pokemon's name, HP, and Knockout status.
+`P` - I added a Pokemon button that shows all the player's pokemon's name, HP, and Knockout status.
        
 ## BATTLING WILD POKEMON
 The chance to encounter a pokemon in tall grass is 15%.
 The battle interface still shows a lot of the wild pokemon's stats.
 
 Player Interface:<br>
-    '1' - Fight<br>
+    `1` - Fight
           Opens a move list revealing 2 moves from the player's current pokemon.
           Upon selecting one, it will activate that move.
           A Fight box will appear revealing the turn order, damage, and if any pokemon were KO'd.
           If the player's selected pokemon is KO'd, it will not attack. Must Switch if able.
 
-    '2' - Bag
+    `2` - Bag
           Same as pressing 'B' except using a pokeball will capture the Wild Pokemon.
           If player already has 6 pokemon, the wild pokemon will flee upon using the pokeball. 
 
-    '3' - Run
+    `3` - Run
           50% chance to escape the wild pokemon battle. 
           Failing to escape forfeits your move and the wild pokemon gets a free attack.
 
-    '4' - Pokemon
+    `4` - Pokemon
           Opens a pokemon list. Pressing the respective number will switch out your current pokemon.
           Doing so forfeits a turn, the wild pokemon will get to attack for free.
 
