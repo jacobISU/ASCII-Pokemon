@@ -17,12 +17,17 @@
 `f` - to open fly menu, enter an x,y to go to the respective cell. Example: "0,0" is the center of the 200x200 world.  
 `p` - unstuck player, @ will move to random place on current map.  
 `P` - Open Pokemon menu.  
-'B' - Open Inventory/Bag.  
+`B` - Open Inventory/Bag.  
 `>` or `.` - Stay Still. Enemies will continue to move.  
 `t` - Open trainer/Enemy menu.  
 `Q` - Quit the game.  
 
-## Overall view.
+## Main Idea.
+On start, choose a pokemon from the randomly generated 3. Catch wild pokemon and battle trainers.
+The battle menu is self explanatory, use the numbers to perform actions.
+The farther you move away from the center of the world (0,0), the higher levels the wild pokemon and enemy trainers have.
+The experience given is generous so one battle can move you relitively far.
+There is no end game meaning if you reach the edge of the world, no victory screen will appear.
 
 
 
