@@ -10,7 +10,7 @@ I used VSCode and minGW to run this project on Windows.
 It was originally ran on unix but for convienience I changed it to run on windows. 
 
 Step 1: Download MinGW (A native Windows port of the GNU Compiler Collection (GCC)). https://sourceforge.net/projects/mingw/
-  You need this because you will need to install the following libraries from it to run the program on Windows.
+  You need this because you will need to install the following libraries from it to run the program on Windows.  
     - libstdc++-6.dll provides the standard C++ library implementations such as containers, algorithms, and utilities.
     - libgcc_s_dw2-1.dll exception handling and other runtime functionalities.
     - libncursesw-6.dll which is used for creating text-based user interfaces in terminal applications.
