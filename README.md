@@ -1,7 +1,8 @@
 # ASCII Pokemon
 
 ## About
-This was a fun project for my Advanced Programming Techniques class in college using C and C++. 
+This was a fun project for my Advanced Programming Techniques class in college using C and C++.  
+
 **Disclosure**: All code in the final project is not my own, as it was a semester project with checkpoint milestones. However, all features and data structures were implemented by me throughout the project.
 
 ## Running the Source Code
@@ -18,6 +19,13 @@ Download MinGW (a native Windows port of the GNU Compiler Collection (GCC)) from
 2. Open a terminal and navigate to the `smith_jacob.assignment-1.10` directory:
    ```bash
    cd smith_jacob.assignment-1.10
+   make
+   .\pokemon.exe
+   ```
+   This will run the game in the terminal.
+
+### Step 3: Controls
+   See README.md in "Play ASCII Pokemon" folder.
   
 
 
